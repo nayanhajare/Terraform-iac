@@ -1,0 +1,1 @@
+rgname1 = "testing-rg1"

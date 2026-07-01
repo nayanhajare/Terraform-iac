@@ -1,0 +1,1 @@
+rg_name2 = "rg-nayan-test2"
