@@ -1,0 +1,1 @@
+rg_name = ["rg-name1", "rg-name2", "rg-name3", "rg-name4"]

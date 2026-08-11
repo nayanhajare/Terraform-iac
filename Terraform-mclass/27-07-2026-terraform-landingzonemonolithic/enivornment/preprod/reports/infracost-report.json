@@ -1,0 +1,820 @@
+{
+  "version": "0.2",
+  "metadata": {
+    "infracostCommand": "breakdown",
+    "vcsBranch": "main",
+    "vcsCommitSha": "3b79f630f12dc8670d26fb72fa5f80b3f1e2bb21",
+    "vcsCommitAuthorName": "Nayan Hajare",
+    "vcsCommitAuthorEmail": "nayan.hajare28@gmail.com",
+    "vcsCommitTimestamp": "2026-07-23T17:14:51Z",
+    "vcsCommitMessage": "updated",
+    "vcsRepositoryUrl": "https://github.com/nayanhajare/Terraform-iac.git"
+  },
+  "currency": "USD",
+  "projects": [
+    {
+      "name": "nayanhajare/Terraform-iac/Terraform-mclass\\27-07-2026-terraform-landingzonemonolithic\\enivornment\\preprod",
+      "displayName": "main",
+      "metadata": {
+        "path": ".",
+        "type": "terraform_dir",
+        "policySha": "c258304c6fb0fafad3f22f4ffb38750983df34d7",
+        "pastPolicySha": "c258304c6fb0fafad3f22f4ffb38750983df34d7",
+        "vcsSubPath": "Terraform-mclass\\27-07-2026-terraform-landingzonemonolithic\\enivornment\\preprod",
+        "vcsCodeChanged": true,
+        "providers": [
+          {
+            "name": "azurerm",
+            "filename": "provider.tf",
+            "startLine": 10,
+            "endLine": 13
+          }
+        ]
+      },
+      "pastBreakdown": {
+        "resources": [
+          {
+            "name": "module.virtual_machine.azurerm_linux_virtual_machine.example[\"nic1\"]",
+            "resourceType": "azurerm_linux_virtual_machine",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.virtual_machine",
+                  "endLine": 35,
+                  "filename": "main.tf",
+                  "startLine": 30
+                },
+                {
+                  "blockName": "azurerm_linux_virtual_machine.example",
+                  "endLine": 57,
+                  "filename": "..\\..\\modules\\azurerm_virtual_machine\\main.tf",
+                  "startLine": 31
+                }
+              ],
+              "checksum": "ecdb550cfcb812a57cc0c4cf802cc20d357d179c02b87054343ffd15ee784633",
+              "endLine": 57,
+              "filename": "..\\..\\modules\\azurerm_virtual_machine\\main.tf",
+              "startLine": 31
+            },
+            "hourlyCost": "0.20431452054794515456",
+            "monthlyCost": "149.1496",
+            "costComponents": [
+              {
+                "name": "Instance usage (Linux, pay as you go, Standard_D4_v5)",
+                "unit": "hours",
+                "hourlyQuantity": "1",
+                "monthlyQuantity": "730",
+                "price": "0.202",
+                "hourlyCost": "0.202",
+                "monthlyCost": "147.46",
+                "priceNotFound": false
+              }
+            ],
+            "subresources": [
+              {
+                "name": "os_disk",
+                "metadata": {},
+                "hourlyCost": "0.00231452054794515456",
+                "monthlyCost": "1.6896",
+                "costComponents": [
+                  {
+                    "name": "Storage (S4, LRS)",
+                    "unit": "months",
+                    "hourlyQuantity": "0.0013698630136986",
+                    "monthlyQuantity": "1",
+                    "price": "1.6896",
+                    "hourlyCost": "0.00231452054794515456",
+                    "monthlyCost": "1.6896",
+                    "priceNotFound": false
+                  },
+                  {
+                    "name": "Disk operations",
+                    "unit": "10k operations",
+                    "hourlyQuantity": null,
+                    "monthlyQuantity": null,
+                    "price": "0.0005",
+                    "hourlyCost": null,
+                    "monthlyCost": null,
+                    "usageBased": true,
+                    "priceNotFound": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "module.bastion.azurerm_bastion_host.bastions[\"bastion1\"]",
+            "resourceType": "azurerm_bastion_host",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.bastion",
+                  "endLine": 29,
+                  "filename": "main.tf",
+                  "startLine": 25
+                },
+                {
+                  "blockName": "azurerm_bastion_host.bastions",
+                  "endLine": 26,
+                  "filename": "..\\..\\modules\\azurerm_bastion\\main.tf",
+                  "startLine": 14
+                }
+              ],
+              "checksum": "86421664bd2877625440aa5f3e48590a4cab310b62a9eae04ac596c1ac4b260e",
+              "endLine": 26,
+              "filename": "..\\..\\modules\\azurerm_bastion\\main.tf",
+              "startLine": 14
+            },
+            "hourlyCost": "0.19",
+            "monthlyCost": "138.7",
+            "costComponents": [
+              {
+                "name": "Bastion host",
+                "unit": "hours",
+                "hourlyQuantity": "1",
+                "monthlyQuantity": "730",
+                "price": "0.19",
+                "hourlyCost": "0.19",
+                "monthlyCost": "138.7",
+                "priceNotFound": false
+              },
+              {
+                "name": "Outbound data transfer (first 10TB)",
+                "unit": "GB",
+                "hourlyQuantity": null,
+                "monthlyQuantity": null,
+                "price": "0.12",
+                "hourlyCost": null,
+                "monthlyCost": null,
+                "usageBased": true,
+                "priceNotFound": false
+              }
+            ]
+          },
+          {
+            "name": "module.load_balancer.azurerm_lb_rule.rules[\"lb1\"]",
+            "resourceType": "azurerm_lb_rule",
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.load_balancer",
+                  "endLine": 41,
+                  "filename": "main.tf",
+                  "startLine": 37
+                },
+                {
+                  "blockName": "azurerm_lb_rule.rules",
+                  "endLine": 45,
+                  "filename": "..\\..\\modules\\azurerm_load_balancer\\main.tf",
+                  "startLine": 35
+                }
+              ],
+              "checksum": "e936d0b079b3d2f9d5f47034ef971fa4cb90f0f3adcd4ff2387af3f2bf77d576",
+              "endLine": 45,
+              "filename": "..\\..\\modules\\azurerm_load_balancer\\main.tf",
+              "startLine": 35
+            },
+            "hourlyCost": "0.01",
+            "monthlyCost": "7.3",
+            "costComponents": [
+              {
+                "name": "Rule usage",
+                "unit": "hours",
+                "hourlyQuantity": "1",
+                "monthlyQuantity": "730",
+                "price": "0.01",
+                "hourlyCost": "0.01",
+                "monthlyCost": "7.3",
+                "priceNotFound": false
+              }
+            ]
+          },
+          {
+            "name": "module.public_ip.azurerm_public_ip.pips[\"pip1\"]",
+            "resourceType": "azurerm_public_ip",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.public_ip",
+                  "endLine": 23,
+                  "filename": "main.tf",
+                  "startLine": 19
+                },
+                {
+                  "blockName": "azurerm_public_ip.pips",
+                  "endLine": 11,
+                  "filename": "..\\..\\modules\\azurerm_public_ip\\main.tf",
+                  "startLine": 2
+                }
+              ],
+              "checksum": "22d3c0e0d59553fca57a56043b9186427c88e4e104b34db10bfa205c201ba885",
+              "endLine": 11,
+              "filename": "..\\..\\modules\\azurerm_public_ip\\main.tf",
+              "startLine": 2
+            },
+            "hourlyCost": "0.005",
+            "monthlyCost": "3.65",
+            "costComponents": [
+              {
+                "name": "IP address (static, regional)",
+                "unit": "hours",
+                "hourlyQuantity": "1",
+                "monthlyQuantity": "730",
+                "price": "0.005",
+                "hourlyCost": "0.005",
+                "monthlyCost": "3.65",
+                "priceNotFound": false
+              }
+            ]
+          },
+          {
+            "name": "module.public_ip.azurerm_public_ip.pips[\"pip2\"]",
+            "resourceType": "azurerm_public_ip",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.public_ip",
+                  "endLine": 23,
+                  "filename": "main.tf",
+                  "startLine": 19
+                },
+                {
+                  "blockName": "azurerm_public_ip.pips",
+                  "endLine": 11,
+                  "filename": "..\\..\\modules\\azurerm_public_ip\\main.tf",
+                  "startLine": 2
+                }
+              ],
+              "checksum": "22d3c0e0d59553fca57a56043b9186427c88e4e104b34db10bfa205c201ba885",
+              "endLine": 11,
+              "filename": "..\\..\\modules\\azurerm_public_ip\\main.tf",
+              "startLine": 2
+            },
+            "hourlyCost": "0.005",
+            "monthlyCost": "3.65",
+            "costComponents": [
+              {
+                "name": "IP address (static, regional)",
+                "unit": "hours",
+                "hourlyQuantity": "1",
+                "monthlyQuantity": "730",
+                "price": "0.005",
+                "hourlyCost": "0.005",
+                "monthlyCost": "3.65",
+                "priceNotFound": false
+              }
+            ]
+          },
+          {
+            "name": "module.load_balancer.azurerm_lb.lbs[\"lb1\"]",
+            "resourceType": "azurerm_lb",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.load_balancer",
+                  "endLine": 41,
+                  "filename": "main.tf",
+                  "startLine": 37
+                },
+                {
+                  "blockName": "azurerm_lb.lbs",
+                  "endLine": 18,
+                  "filename": "..\\..\\modules\\azurerm_load_balancer\\main.tf",
+                  "startLine": 7
+                }
+              ],
+              "checksum": "6a381c7843111513bdb37dc53c32facae6f98d29f093b96d5226a4e998bfc140",
+              "endLine": 18,
+              "filename": "..\\..\\modules\\azurerm_load_balancer\\main.tf",
+              "startLine": 7
+            },
+            "costComponents": [
+              {
+                "name": "Data processed",
+                "unit": "GB",
+                "hourlyQuantity": null,
+                "monthlyQuantity": null,
+                "price": "0.005",
+                "hourlyCost": null,
+                "monthlyCost": null,
+                "usageBased": true,
+                "priceNotFound": false
+              }
+            ]
+          }
+        ],
+        "freeResources": [
+          {
+            "name": "module.resource_group.azurerm_resource_group.rgs[\"rg1\"]",
+            "resourceType": "azurerm_resource_group",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.resource_group",
+                  "endLine": 6,
+                  "filename": "main.tf",
+                  "startLine": 2
+                },
+                {
+                  "blockName": "azurerm_resource_group.rgs",
+                  "endLine": 8,
+                  "filename": "..\\..\\modules\\azurerm_resource_group\\main.tf",
+                  "startLine": 3
+                }
+              ],
+              "checksum": "da0b63e714b441209a49e28bdf1b128a7c8f03e2a41ccaf365a6b71c55090c11",
+              "endLine": 8,
+              "filename": "..\\..\\modules\\azurerm_resource_group\\main.tf",
+              "startLine": 3
+            }
+          },
+          {
+            "name": "module.virtual_machine.azurerm_network_interface.nics[\"nic1\"]",
+            "resourceType": "azurerm_network_interface",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.virtual_machine",
+                  "endLine": 35,
+                  "filename": "main.tf",
+                  "startLine": 30
+                },
+                {
+                  "blockName": "azurerm_network_interface.nics",
+                  "endLine": 20,
+                  "filename": "..\\..\\modules\\azurerm_virtual_machine\\main.tf",
+                  "startLine": 8
+                }
+              ],
+              "checksum": "a5ad23f77ed64403d84dd485272be93a59c137c1bab614dd2c0b45222e865185",
+              "endLine": 20,
+              "filename": "..\\..\\modules\\azurerm_virtual_machine\\main.tf",
+              "startLine": 8
+            }
+          },
+          {
+            "name": "module.virtual_network.azurerm_virtual_network.vnets[\"vnet1\"]",
+            "resourceType": "azurerm_virtual_network",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.virtual_network",
+                  "endLine": 13,
+                  "filename": "main.tf",
+                  "startLine": 8
+                },
+                {
+                  "blockName": "azurerm_virtual_network.vnets",
+                  "endLine": 8,
+                  "filename": "..\\..\\modules\\azurerm_virtual_network\\main.tf",
+                  "startLine": 2
+                }
+              ],
+              "checksum": "3fec309f65a4034a69a9ecf96118a5d2c1fed30bd3ec2b0f15f606348ecaade0",
+              "endLine": 8,
+              "filename": "..\\..\\modules\\azurerm_virtual_network\\main.tf",
+              "startLine": 2
+            }
+          }
+        ],
+        "totalHourlyCost": "0.41431452054794515456",
+        "totalMonthlyCost": "302.4496",
+        "totalMonthlyUsageCost": "0"
+      },
+      "breakdown": {
+        "resources": [
+          {
+            "name": "module.virtual_machine.azurerm_linux_virtual_machine.example[\"nic1\"]",
+            "resourceType": "azurerm_linux_virtual_machine",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.virtual_machine",
+                  "endLine": 35,
+                  "filename": "main.tf",
+                  "startLine": 30
+                },
+                {
+                  "blockName": "azurerm_linux_virtual_machine.example",
+                  "endLine": 57,
+                  "filename": "..\\..\\modules\\azurerm_virtual_machine\\main.tf",
+                  "startLine": 31
+                }
+              ],
+              "checksum": "ecdb550cfcb812a57cc0c4cf802cc20d357d179c02b87054343ffd15ee784633",
+              "endLine": 57,
+              "filename": "..\\..\\modules\\azurerm_virtual_machine\\main.tf",
+              "startLine": 31
+            },
+            "hourlyCost": "0.20431452054794515456",
+            "monthlyCost": "149.1496",
+            "costComponents": [
+              {
+                "name": "Instance usage (Linux, pay as you go, Standard_D4_v5)",
+                "unit": "hours",
+                "hourlyQuantity": "1",
+                "monthlyQuantity": "730",
+                "price": "0.202",
+                "hourlyCost": "0.202",
+                "monthlyCost": "147.46",
+                "priceNotFound": false
+              }
+            ],
+            "subresources": [
+              {
+                "name": "os_disk",
+                "metadata": {},
+                "hourlyCost": "0.00231452054794515456",
+                "monthlyCost": "1.6896",
+                "costComponents": [
+                  {
+                    "name": "Storage (S4, LRS)",
+                    "unit": "months",
+                    "hourlyQuantity": "0.0013698630136986",
+                    "monthlyQuantity": "1",
+                    "price": "1.6896",
+                    "hourlyCost": "0.00231452054794515456",
+                    "monthlyCost": "1.6896",
+                    "priceNotFound": false
+                  },
+                  {
+                    "name": "Disk operations",
+                    "unit": "10k operations",
+                    "hourlyQuantity": null,
+                    "monthlyQuantity": null,
+                    "price": "0.0005",
+                    "hourlyCost": null,
+                    "monthlyCost": null,
+                    "usageBased": true,
+                    "priceNotFound": false
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "module.bastion.azurerm_bastion_host.bastions[\"bastion1\"]",
+            "resourceType": "azurerm_bastion_host",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.bastion",
+                  "endLine": 29,
+                  "filename": "main.tf",
+                  "startLine": 25
+                },
+                {
+                  "blockName": "azurerm_bastion_host.bastions",
+                  "endLine": 26,
+                  "filename": "..\\..\\modules\\azurerm_bastion\\main.tf",
+                  "startLine": 14
+                }
+              ],
+              "checksum": "86421664bd2877625440aa5f3e48590a4cab310b62a9eae04ac596c1ac4b260e",
+              "endLine": 26,
+              "filename": "..\\..\\modules\\azurerm_bastion\\main.tf",
+              "startLine": 14
+            },
+            "hourlyCost": "0.19",
+            "monthlyCost": "138.7",
+            "costComponents": [
+              {
+                "name": "Bastion host",
+                "unit": "hours",
+                "hourlyQuantity": "1",
+                "monthlyQuantity": "730",
+                "price": "0.19",
+                "hourlyCost": "0.19",
+                "monthlyCost": "138.7",
+                "priceNotFound": false
+              },
+              {
+                "name": "Outbound data transfer (first 10TB)",
+                "unit": "GB",
+                "hourlyQuantity": null,
+                "monthlyQuantity": null,
+                "price": "0.12",
+                "hourlyCost": null,
+                "monthlyCost": null,
+                "usageBased": true,
+                "priceNotFound": false
+              }
+            ]
+          },
+          {
+            "name": "module.load_balancer.azurerm_lb_rule.rules[\"lb1\"]",
+            "resourceType": "azurerm_lb_rule",
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.load_balancer",
+                  "endLine": 41,
+                  "filename": "main.tf",
+                  "startLine": 37
+                },
+                {
+                  "blockName": "azurerm_lb_rule.rules",
+                  "endLine": 45,
+                  "filename": "..\\..\\modules\\azurerm_load_balancer\\main.tf",
+                  "startLine": 35
+                }
+              ],
+              "checksum": "e936d0b079b3d2f9d5f47034ef971fa4cb90f0f3adcd4ff2387af3f2bf77d576",
+              "endLine": 45,
+              "filename": "..\\..\\modules\\azurerm_load_balancer\\main.tf",
+              "startLine": 35
+            },
+            "hourlyCost": "0.01",
+            "monthlyCost": "7.3",
+            "costComponents": [
+              {
+                "name": "Rule usage",
+                "unit": "hours",
+                "hourlyQuantity": "1",
+                "monthlyQuantity": "730",
+                "price": "0.01",
+                "hourlyCost": "0.01",
+                "monthlyCost": "7.3",
+                "priceNotFound": false
+              }
+            ]
+          },
+          {
+            "name": "module.public_ip.azurerm_public_ip.pips[\"pip1\"]",
+            "resourceType": "azurerm_public_ip",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.public_ip",
+                  "endLine": 23,
+                  "filename": "main.tf",
+                  "startLine": 19
+                },
+                {
+                  "blockName": "azurerm_public_ip.pips",
+                  "endLine": 11,
+                  "filename": "..\\..\\modules\\azurerm_public_ip\\main.tf",
+                  "startLine": 2
+                }
+              ],
+              "checksum": "22d3c0e0d59553fca57a56043b9186427c88e4e104b34db10bfa205c201ba885",
+              "endLine": 11,
+              "filename": "..\\..\\modules\\azurerm_public_ip\\main.tf",
+              "startLine": 2
+            },
+            "hourlyCost": "0.005",
+            "monthlyCost": "3.65",
+            "costComponents": [
+              {
+                "name": "IP address (static, regional)",
+                "unit": "hours",
+                "hourlyQuantity": "1",
+                "monthlyQuantity": "730",
+                "price": "0.005",
+                "hourlyCost": "0.005",
+                "monthlyCost": "3.65",
+                "priceNotFound": false
+              }
+            ]
+          },
+          {
+            "name": "module.public_ip.azurerm_public_ip.pips[\"pip2\"]",
+            "resourceType": "azurerm_public_ip",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.public_ip",
+                  "endLine": 23,
+                  "filename": "main.tf",
+                  "startLine": 19
+                },
+                {
+                  "blockName": "azurerm_public_ip.pips",
+                  "endLine": 11,
+                  "filename": "..\\..\\modules\\azurerm_public_ip\\main.tf",
+                  "startLine": 2
+                }
+              ],
+              "checksum": "22d3c0e0d59553fca57a56043b9186427c88e4e104b34db10bfa205c201ba885",
+              "endLine": 11,
+              "filename": "..\\..\\modules\\azurerm_public_ip\\main.tf",
+              "startLine": 2
+            },
+            "hourlyCost": "0.005",
+            "monthlyCost": "3.65",
+            "costComponents": [
+              {
+                "name": "IP address (static, regional)",
+                "unit": "hours",
+                "hourlyQuantity": "1",
+                "monthlyQuantity": "730",
+                "price": "0.005",
+                "hourlyCost": "0.005",
+                "monthlyCost": "3.65",
+                "priceNotFound": false
+              }
+            ]
+          },
+          {
+            "name": "module.load_balancer.azurerm_lb.lbs[\"lb1\"]",
+            "resourceType": "azurerm_lb",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.load_balancer",
+                  "endLine": 41,
+                  "filename": "main.tf",
+                  "startLine": 37
+                },
+                {
+                  "blockName": "azurerm_lb.lbs",
+                  "endLine": 18,
+                  "filename": "..\\..\\modules\\azurerm_load_balancer\\main.tf",
+                  "startLine": 7
+                }
+              ],
+              "checksum": "6a381c7843111513bdb37dc53c32facae6f98d29f093b96d5226a4e998bfc140",
+              "endLine": 18,
+              "filename": "..\\..\\modules\\azurerm_load_balancer\\main.tf",
+              "startLine": 7
+            },
+            "costComponents": [
+              {
+                "name": "Data processed",
+                "unit": "GB",
+                "hourlyQuantity": null,
+                "monthlyQuantity": null,
+                "price": "0.005",
+                "hourlyCost": null,
+                "monthlyCost": null,
+                "usageBased": true,
+                "priceNotFound": false
+              }
+            ]
+          }
+        ],
+        "freeResources": [
+          {
+            "name": "module.resource_group.azurerm_resource_group.rgs[\"rg1\"]",
+            "resourceType": "azurerm_resource_group",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.resource_group",
+                  "endLine": 6,
+                  "filename": "main.tf",
+                  "startLine": 2
+                },
+                {
+                  "blockName": "azurerm_resource_group.rgs",
+                  "endLine": 8,
+                  "filename": "..\\..\\modules\\azurerm_resource_group\\main.tf",
+                  "startLine": 3
+                }
+              ],
+              "checksum": "da0b63e714b441209a49e28bdf1b128a7c8f03e2a41ccaf365a6b71c55090c11",
+              "endLine": 8,
+              "filename": "..\\..\\modules\\azurerm_resource_group\\main.tf",
+              "startLine": 3
+            }
+          },
+          {
+            "name": "module.virtual_machine.azurerm_network_interface.nics[\"nic1\"]",
+            "resourceType": "azurerm_network_interface",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.virtual_machine",
+                  "endLine": 35,
+                  "filename": "main.tf",
+                  "startLine": 30
+                },
+                {
+                  "blockName": "azurerm_network_interface.nics",
+                  "endLine": 20,
+                  "filename": "..\\..\\modules\\azurerm_virtual_machine\\main.tf",
+                  "startLine": 8
+                }
+              ],
+              "checksum": "a5ad23f77ed64403d84dd485272be93a59c137c1bab614dd2c0b45222e865185",
+              "endLine": 20,
+              "filename": "..\\..\\modules\\azurerm_virtual_machine\\main.tf",
+              "startLine": 8
+            }
+          },
+          {
+            "name": "module.virtual_network.azurerm_virtual_network.vnets[\"vnet1\"]",
+            "resourceType": "azurerm_virtual_network",
+            "tags": {},
+            "providerLink": "provider.tf:10",
+            "metadata": {
+              "calls": [
+                {
+                  "blockName": "module.virtual_network",
+                  "endLine": 13,
+                  "filename": "main.tf",
+                  "startLine": 8
+                },
+                {
+                  "blockName": "azurerm_virtual_network.vnets",
+                  "endLine": 8,
+                  "filename": "..\\..\\modules\\azurerm_virtual_network\\main.tf",
+                  "startLine": 2
+                }
+              ],
+              "checksum": "3fec309f65a4034a69a9ecf96118a5d2c1fed30bd3ec2b0f15f606348ecaade0",
+              "endLine": 8,
+              "filename": "..\\..\\modules\\azurerm_virtual_network\\main.tf",
+              "startLine": 2
+            }
+          }
+        ],
+        "totalHourlyCost": "0.41431452054794515456",
+        "totalMonthlyCost": "302.4496",
+        "totalMonthlyUsageCost": "0"
+      },
+      "diff": {
+        "resources": [],
+        "totalHourlyCost": "0",
+        "totalMonthlyCost": "0",
+        "totalMonthlyUsageCost": "0"
+      },
+      "summary": {
+        "totalDetectedResources": 15,
+        "totalSupportedResources": 6,
+        "totalUnsupportedResources": 0,
+        "totalUsageBasedResources": 3,
+        "totalNoPriceResources": 9,
+        "unsupportedResourceCounts": {},
+        "noPriceResourceCounts": {
+          "azurerm_lb_backend_address_pool": 1,
+          "azurerm_lb_probe": 1,
+          "azurerm_network_interface": 1,
+          "azurerm_network_interface_backend_address_pool_association": 1,
+          "azurerm_resource_group": 1,
+          "azurerm_subnet": 3,
+          "azurerm_virtual_network": 1
+        }
+      }
+    }
+  ],
+  "totalHourlyCost": "0.41431452054794515456",
+  "totalMonthlyCost": "302.4496",
+  "totalMonthlyUsageCost": "0",
+  "pastTotalHourlyCost": "0.41431452054794515456",
+  "pastTotalMonthlyCost": "302.4496",
+  "pastTotalMonthlyUsageCost": "0",
+  "diffTotalHourlyCost": "0",
+  "diffTotalMonthlyCost": "0",
+  "diffTotalMonthlyUsageCost": "0",
+  "timeGenerated": "2026-07-27T14:23:13.0687323Z",
+  "summary": {
+    "totalDetectedResources": 15,
+    "totalSupportedResources": 6,
+    "totalUnsupportedResources": 0,
+    "totalUsageBasedResources": 3,
+    "totalNoPriceResources": 9,
+    "unsupportedResourceCounts": {},
+    "noPriceResourceCounts": {
+      "azurerm_lb_backend_address_pool": 1,
+      "azurerm_lb_probe": 1,
+      "azurerm_network_interface": 1,
+      "azurerm_network_interface_backend_address_pool_association": 1,
+      "azurerm_resource_group": 1,
+      "azurerm_subnet": 3,
+      "azurerm_virtual_network": 1
+    }
+  }
+}

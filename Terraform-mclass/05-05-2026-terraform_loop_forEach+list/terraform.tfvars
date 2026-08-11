@@ -1,0 +1,1 @@
+rg-qa1 = ["rg-bhakua" ,"rg-rondu" , "rg-devtest" , "rg-dhondu"]

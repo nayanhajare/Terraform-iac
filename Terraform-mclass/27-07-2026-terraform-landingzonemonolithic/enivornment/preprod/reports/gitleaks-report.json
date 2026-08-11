@@ -1,0 +1,26 @@
+[
+ {
+  "RuleID": "terraform-admin-password",
+  "Description": "Detect Terraform admin_password",
+  "StartLine": 64,
+  "EndLine": 64,
+  "StartColumn": 6,
+  "EndColumn": 36,
+  "Match": "admin_password = \"@Simsim#1234\"",
+  "Secret": "admin_password = \"@Simsim#1234\"",
+  "File": "Terraform-mclass/09-06-2026-terraform_rg_stg_vnet_subnet_vm/azurerm_virtual_machine/main.tf",
+  "SymlinkFile": "",
+  "Commit": "ff7e1b0ab688cebd028a514e8ca95d5e7773621a",
+  "Link": "https://github.com/nayanhajare/Terraform-iac/blob/ff7e1b0ab688cebd028a514e8ca95d5e7773621a/Terraform-mclass/09-06-2026-terraform_rg_stg_vnet_subnet_vm/azurerm_virtual_machine/main.tf#L64",
+  "Entropy": 4.2359815,
+  "Author": "Nayan Hajare",
+  "Email": "nayan.hajare28@gmail.com",
+  "Date": "2026-07-01T14:17:20Z",
+  "Message": "terraform code file",
+  "Tags": [
+   "terraform",
+   "password"
+  ],
+  "Fingerprint": "ff7e1b0ab688cebd028a514e8ca95d5e7773621a:Terraform-mclass/09-06-2026-terraform_rg_stg_vnet_subnet_vm/azurerm_virtual_machine/main.tf:terraform-admin-password:64"
+ }
+]

@@ -1,0 +1,1 @@
+rgname1 = "ters_tested1"
